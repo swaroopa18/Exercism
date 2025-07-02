@@ -6,14 +6,15 @@ class AssemblyLine
   end
 
   def production_rate_per_hour
+    success_rate = 
     if (@speed <= 4)
-      success_rate = 1
+      1
     elsif(@speed >= 5 and @speed <= 8)
-      success_rate = 0.9
+      0.9
     elsif(@speed == 9)
-      success_rate = 0.8
+      0.8
     else
-      success_rate = 0.77
+      0.77
     end
     @speed * success_rate * MAX_CARS_PER_HOUR
   end
